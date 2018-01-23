@@ -264,6 +264,9 @@ Private Sub Command8_Click()
     Command7.Enabled = False
     Text1.Enabled = False
     Text2.Enabled = False
+    museKlik = "0"
+    Label4.Caption = "0"
+    
 End Sub
 
 Private Sub Timer1_Timer()
