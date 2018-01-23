@@ -1,14 +1,22 @@
 VERSION 5.00
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   4545
+   ClientHeight    =   6315
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   2460
+   ClientWidth     =   4815
    LinkTopic       =   "Form1"
-   ScaleHeight     =   4545
-   ScaleWidth      =   2460
+   ScaleHeight     =   6315
+   ScaleWidth      =   4815
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command8 
+      Caption         =   "Logout"
+      Height          =   615
+      Left            =   2520
+      TabIndex        =   15
+      Top             =   2520
+      Width           =   855
+   End
    Begin VB.CommandButton Command7 
       Caption         =   "Hilsen"
       Enabled         =   0   'False
@@ -110,6 +118,30 @@ Begin VB.Form Form1
       Top             =   120
       Width           =   975
    End
+   Begin VB.Label Label5 
+      Caption         =   "gange."
+      Height          =   255
+      Left            =   1800
+      TabIndex        =   14
+      Top             =   4440
+      Width           =   495
+   End
+   Begin VB.Label Label4 
+      Caption         =   "0"
+      Height          =   255
+      Left            =   1440
+      TabIndex        =   13
+      Top             =   4440
+      Width           =   375
+   End
+   Begin VB.Label Label3 
+      Caption         =   "Du har klikket:"
+      Height          =   255
+      Left            =   240
+      TabIndex        =   12
+      Top             =   4440
+      Width           =   1095
+   End
    Begin VB.Label Label2 
       Alignment       =   2  'Center
       Caption         =   "Hvem er du?"
@@ -134,27 +166,39 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Dim museKlik As Integer
+
 Private Sub Command1_Click()
 Label1.Caption = "Hansen"
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 End Sub
 
 Private Sub Command2_Click()
 Label1.Caption = Text1.Text
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 End Sub
 
 Private Sub Command3_Click()
 Timer1.Enabled = True
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 End Sub
 
 Private Sub Command4_Click()
 Timer2.Enabled = False
 Timer2.Enabled = False
 Label1.Visible = True
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 End Sub
 
 Private Sub Command5_Click()
 Timer1.Interval = Text2.Text
 Timer2.Interval = Text2.Text
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 End Sub
 
 Private Sub Command6_Click()
@@ -168,6 +212,7 @@ If Text3.Text = "1234" Then
     Command5.Enabled = True
     Command7.Enabled = True
     Text1.Enabled = True
+    Text2.Enabled = True
     Form1.BackColor = &HC000&
 Else
     Label1.Caption = "Fejl"
@@ -179,7 +224,11 @@ Else
     Command5.Enabled = False
     Command7.Enabled = False
     Text1.Enabled = False
+    Text2.Enabled = False
 End If
+
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 
 End Sub
 
@@ -198,8 +247,23 @@ Select Case Text1.Text
         Label2.Caption = "Hej, dig kender jeg ikke"
 End Select
     
+museKlik = museKlik + 1
+Label4.Caption = museKlik
     
-    
+End Sub
+
+
+Private Sub Command8_Click()
+    Label1.Caption = "Du er offline"
+    Form1.BackColor = &H8000000F
+    Command1.Enabled = False
+    Command2.Enabled = False
+    Command3.Enabled = False
+    Command4.Enabled = False
+    Command5.Enabled = False
+    Command7.Enabled = False
+    Text1.Enabled = False
+    Text2.Enabled = False
 End Sub
 
 Private Sub Timer1_Timer()
