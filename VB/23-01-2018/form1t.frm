@@ -4,17 +4,17 @@ Begin VB.Form Form1
    ClientHeight    =   6315
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   4815
+   ClientWidth     =   2520
    LinkTopic       =   "Form1"
    ScaleHeight     =   6315
-   ScaleWidth      =   4815
+   ScaleWidth      =   2520
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command8 
       Caption         =   "Logout"
       Height          =   615
-      Left            =   2520
+      Left            =   840
       TabIndex        =   15
-      Top             =   2520
+      Top             =   4920
       Width           =   855
    End
    Begin VB.CommandButton Command7 
