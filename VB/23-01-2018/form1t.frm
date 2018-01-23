@@ -175,7 +175,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim museKlik As Integer 'definerer museKlik som værende integer
+Public museKlik As Integer 'definerer museKlik som værende integer - defineret som public for at form2 kan tilgå den
 
 Private Sub Command1_Click()
 Label1.Caption = "Hansen"
@@ -287,6 +287,8 @@ End Sub
 Private Sub Command9_Click()
 Load Form2
 Form2.Show
+museKlik = museKlik + 1
+Label4.Caption = museKlik
 
 
 End Sub
