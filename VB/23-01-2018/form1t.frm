@@ -9,10 +9,19 @@ Begin VB.Form Form1
    ScaleHeight     =   6315
    ScaleWidth      =   2520
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command9 
+      Caption         =   "Form2"
+      Enabled         =   0   'False
+      Height          =   615
+      Left            =   1560
+      TabIndex        =   16
+      Top             =   4920
+      Width           =   855
+   End
    Begin VB.CommandButton Command8 
       Caption         =   "Logout"
       Height          =   615
-      Left            =   840
+      Left            =   240
       TabIndex        =   15
       Top             =   4920
       Width           =   855
@@ -166,7 +175,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim museKlik As Integer
+Dim museKlik As Integer 'definerer museKlik som værende integer
 
 Private Sub Command1_Click()
 Label1.Caption = "Hansen"
@@ -201,7 +210,7 @@ museKlik = museKlik + 1
 Label4.Caption = museKlik
 End Sub
 
-Private Sub Command6_Click()
+Private Sub Command6_Click() 'Login funktion - kode i plain text
 
 If Text3.Text = "1234" Then
     Label1.Caption = "Rigtigt"
@@ -211,6 +220,7 @@ If Text3.Text = "1234" Then
     Command4.Enabled = True
     Command5.Enabled = True
     Command7.Enabled = True
+    Command9.Enabled = True
     Text1.Enabled = True
     Text2.Enabled = True
     Form1.BackColor = &HC000&
@@ -223,6 +233,7 @@ Else
     Command4.Enabled = False
     Command5.Enabled = False
     Command7.Enabled = False
+    Command9.Enabled = False
     Text1.Enabled = False
     Text2.Enabled = False
 End If
@@ -232,7 +243,7 @@ Label4.Caption = museKlik
 
 End Sub
 
-Private Sub Command7_Click()
+Private Sub Command7_Click() 'tjekker navne og hilser
 
 Select Case Text1.Text
     Case "Chris"
@@ -253,7 +264,7 @@ Label4.Caption = museKlik
 End Sub
 
 
-Private Sub Command8_Click()
+Private Sub Command8_Click() 'Logout funktionalitet - enable = false
     Label1.Caption = "Du er offline"
     Form1.BackColor = &H8000000F
     Command1.Enabled = False
@@ -262,11 +273,22 @@ Private Sub Command8_Click()
     Command4.Enabled = False
     Command5.Enabled = False
     Command7.Enabled = False
+    Command9.Enabled = False
     Text1.Enabled = False
     Text2.Enabled = False
     museKlik = "0"
     Label4.Caption = "0"
+    Timer1.Enabled = False
+    Timer2.Enabled = False
+    Label1.Visible = True
     
+End Sub
+
+Private Sub Command9_Click()
+Load Form2
+Form2.Show
+
+
 End Sub
 
 Private Sub Timer1_Timer()
