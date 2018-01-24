@@ -194,7 +194,7 @@ Timer1.Enabled = True
 museKlik = museKlik + 1
 Label4.Caption = museKlik
 End Sub
-
+    
 Private Sub Command4_Click()
 Timer2.Enabled = False
 Timer2.Enabled = False

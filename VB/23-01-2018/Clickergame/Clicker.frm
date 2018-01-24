@@ -127,12 +127,12 @@ Private Sub Command1_Click()
     Label2.Caption = klikCount
 End Sub
 
-Private Sub Command2_Click()
+Private Sub Command2_Click() 'Overfører tekst fra text1
     Label1.Caption = Text1.Text
         
 End Sub
 
-Private Sub Command3_Click()
+Private Sub Command3_Click() 'Sikrer at label1-2 er 0 ved tryk på Reset, samt command1 enables.
     Label1.Caption = 0
     Label2.Caption = 0
     Label1.Caption = Text1.Text
@@ -140,10 +140,10 @@ Private Sub Command3_Click()
 End Sub
 
 Private Sub Text1_GotFocus()
-    Text1.Text = ""
+    Text1.Text = "" 'Rydder text1 on click.
 End Sub
 
-Private Sub Timer1_Timer()
+Private Sub Timer1_Timer()  'Timer der bestemmer om command1 er enabled eller ej
     Label1.Caption = Label1.Caption - 1
         If Label1.Caption = 0 Then
             Timer1.Enabled = False
