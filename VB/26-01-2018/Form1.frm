@@ -31,8 +31,11 @@ Begin VB.Form Form1
    Begin VB.HScrollBar HScroll1 
       Height          =   375
       Left            =   600
+      Max             =   100
+      Min             =   1
       TabIndex        =   12
       Top             =   4320
+      Value           =   1
       Width           =   3015
    End
    Begin VB.TextBox Text5 

@@ -4,6 +4,7 @@ Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\Wind
 Form=Form2.frm
 IconForm="Form1"
 Startup="Form1"
+ExeName32="Gættespil.exe"
 Command32=""
 Name="Project1"
 HelpContextID="0"
