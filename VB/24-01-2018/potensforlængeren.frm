@@ -95,10 +95,10 @@ Dim a As Long
 Dim b As Long
 
 Private Sub Command1_Click()
-    a = Val(Text1.Text)
-    b = Val(Text3.Text)
-    sum = (a ^ b)
-    Label3.Caption = sum
+    a = Val(Text3.Text)
+    b = Val(Text1.Text)
+    Sum = (a ^ b)
+    Label3.Caption = Sum
     
 End Sub
 
